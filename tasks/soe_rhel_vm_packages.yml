@@ -2,7 +2,7 @@
   yum:
     name:
       - firewalld
-      - scap-security-guide
+#      - scap-security-guide
       - vim
     state: present
 

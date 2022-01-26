@@ -1,0 +1,15 @@
+- name: install packages
+  yum:
+    name:
+      - firewalld
+      - scap-security-guide
+      - vim
+    state: present
+
+- name: start firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: true
+
+

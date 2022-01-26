@@ -1,0 +1,46 @@
+---
+infra-servers:
+  hosts: 
+    workstation.dumont-lab.lan:
+      ansible_host: 192.168.77.27
+#      ansible_connection: local
+    infraserver.dumont-lab.lan:
+      ansible_host: 192.168.77.21
+    storage.dumont-lab.lan:
+      ansible_host: 192.168.77.35
+ocp_hosts:
+  hosts:
+    dl360g7-1.dumont-lab.lan:
+      ansible_host: 192.168.77.23
+    dl360g7-2.dumont-lab.lan:
+      ansible_host: 192.168.77.24
+    dl360g8-3.dumont-lab.lan:
+      ansible_host: 192.168.77.25
+kvm_vms:
+  hosts:
+    satellite.dumont-lab.lan:
+      ansible_host: 192.168.77.30
+    ansible.dumont-lab.lan:
+      ansible_host: 192.168.77.28
+
+ocp_vms:
+  children:
+    test_vms:
+      hosts:
+        vm-test-vm-1.dumont-lab.lan:
+          ansible_host: 192.168.45.181
+        vm-test-label-1.dumont-lab.lan:
+          ansible_host: 192.168.45.183
+        vm-2022-01-18-21-18-53-1.dumont-lab.lan:
+          ansible_host: 192.168.45.182
+
+
+    prod_vms:
+      hosts:
+        webserver.dumont-lab.lan:
+          ansible_host: 192.168.77.115
+        lab-prometheus.dumont-lab.lan:
+          ansible_host: 192.168.77.122
+ 
+
+

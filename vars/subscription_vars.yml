@@ -1,0 +1,8 @@
+---
+rhel8_ak: rhel8-vm-ak
+rhel8_ak_physical: RHEL8-physical-ak
+org_name: dumont_home_lab
+rhel8_repositories:
+  - rhel-8-for-x86_64-baseos-rpms
+  - rhel-8-for-x86_64-appstream-rpms
+

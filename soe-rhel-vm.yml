@@ -1,13 +1,11 @@
 - name: get machines to soe
-  hosts: test_vms 
+  hosts: all 
   become: true
   remote_user: cloud-user 
   gather_facts: yes
   vars_files:
     - secrets_folder/ovirt-pass
     - vars/subscription_vars.yml
-#    - vars/users.yml
-#    - vars/compliance.yml
 
   collections:
     - redhat.insights 

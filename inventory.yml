@@ -17,30 +17,36 @@ ocp_hosts:
     dl360g8-3.dumont-lab.lan:
       ansible_host: 192.168.77.25
 kvm_vms:
-  hosts:
-    satellite.dumont-lab.lan:
-      ansible_host: 192.168.77.30
-    ansible.dumont-lab.lan:
-      ansible_host: 192.168.77.28
-
-ocp_vms:
   children:
-    test_vms:
+    infra_vms:
       hosts:
-        vm-test-vm-1.dumont-lab.lan:
-          ansible_host: 192.168.45.181
-        vm-test-label-1.dumont-lab.lan:
-          ansible_host: 192.168.45.183
-        vm-2022-01-18-21-18-53-1.dumont-lab.lan:
-          ansible_host: 192.168.45.182
-
-
-    prod_vms:
+        satellite.dumont-lab.lan:
+          ansible_host: 192.168.77.30
+        ansible.dumont-lab.lan:
+          ansible_host: 192.168.77.28
+        dns-server.dumont-lab.lan:
+          ansible_host: 192.168.77.20
+        provisioner.dumont-lab.lan:
+          ansible_host: 192.168.77.36
+    ocp_vms:
       hosts:
-        webserver.dumont-lab.lan:
-          ansible_host: 192.168.77.115
-        lab-prometheus.dumont-lab.lan:
-          ansible_host: 192.168.77.122
- 
+        ocp-host1.dumont-lab.lan:
+          ansible_host: 192.168.45.187
+        ocp-host2.dumont-lab.lan:
+          ansible_host: 192.168.45.24
+        ocp-host3.dumont-lab.lan:
+          ansible_host: 192.168.45.25
+        ocp-host4.dumont-lab.lan:
+          ansible_host: 192.168.45.26
+        ocp-host5.dumont-lab.lan:
+          ansible_host: 192.168.45.27
+        ocp-host6.dumont-lab.lan:
+          ansible_host: 192.168.45.28
 
+kurtvirt_hosts:
+  hosts:
+    vm-2022-03-01-20-23-04-1.dumont-lab.lan:
+      ansible_host: 192.168.45.89
+    vm-2022-03-01-01-24-06-1.dumont-lab.lan:
+      ansible_host: 192.168.45.87
 

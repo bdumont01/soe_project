@@ -50,3 +50,11 @@ kurtvirt_hosts:
     vm-2022-03-01-01-24-06-1.dumont-lab.lan:
       ansible_host: 192.168.45.87
 
+kvm_hosts:
+  hosts:
+    kvm-host1.dumont-lab.lan:
+      ansible_host: 192.168.45.190
+    kvm-host2.dumont-lab.lan:
+      ansible-host: 192.168.45.189
+    test45.dumont-lab.lan:
+      ansible_host: 192.168.45.77

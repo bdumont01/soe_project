@@ -20,8 +20,6 @@ kvm_vms:
   children:
     infra_vms:
       hosts:
-        satellite.dumont-lab.lan:
-          ansible_host: 192.168.77.30
         ansible.dumont-lab.lan:
           ansible_host: 192.168.77.28
         dns-server.dumont-lab.lan:
@@ -66,4 +64,7 @@ kvm_hosts:
           ansible_host: 192.168.77.21
         storage.dumont-lab.lan:
           ansible_host: 192.168.77.35
-
+rhel7_hosts:
+  hosts:
+    satellite.dumont-lab.lan:
+      ansible_host: 192.168.77.30

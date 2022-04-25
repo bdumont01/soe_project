@@ -21,7 +21,7 @@
   ignore_errors: yes
 
 - name: subscribe to sat
-  redhat_subscription:
+  community.general.redhat_subscription:
     activationkey: "{{ subscribe_activation_key }}"
     org_id: "{{ org_name }}"
     rhsm_baseurl: https://satellite.dumont-lab.lan/pulp/repos
@@ -33,14 +33,14 @@
   ignore_errors: yes
 
 - name: Disable all RHSM repositories
-  rhsm_repository:
+  community.general.rhsm_repository:
     name: '*'
     state: disabled
   when: redhat_subscription.changed
-  
+
 
 - name: Enable RHSM repositories
-  rhsm_repository:
+  community.general.rhsm_repository:
     name: rhel-8-for-x86_64*
     state: enabled
   when:                              

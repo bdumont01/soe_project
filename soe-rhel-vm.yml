@@ -1,7 +1,7 @@
 - name: get machines to soe
-  hosts: all 
+  hosts: all
   become: true
-  remote_user: cloud-user 
+  remote_user: root 
   gather_facts: yes
   vars_files:
     - secrets_folder/ovirt-pass

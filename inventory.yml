@@ -26,6 +26,11 @@ kvm_vms:
           ansible_host: 192.168.77.20
         provisioner.dumont-lab.lan:
           ansible_host: 192.168.77.36
+        aap-control.dumont-lab.lan:
+#          ansible_host: 192.168.45.139
+        aap-hub.dumont-lab.lan:
+#          ansible_host: 192.168.45.140
+        provisioner-new.dumont-lab.lan:
     ocp_vms:
       hosts:
         ocp-host1.dumont-lab.lan:
@@ -40,6 +45,36 @@ kvm_vms:
           ansible_host: 192.168.45.27
         ocp-host6.dumont-lab.lan:
           ansible_host: 192.168.45.28
+
+ipaserver:
+  hosts:
+    infraserver.dumont-lab.lan:
+      ansible_host: 192.168.77.21
+      ipaserver_domain: dumont-lab.lan
+      ipaserver_realm: DUMONT-LAB.LAN
+      ipaserver_setup_dns: no
+      ipaadmin_password: "{{ ovirt_password }}"
+      ipadm_password: "{{ ovirt_password }}"
+
+ipaclients:
+  hosts:
+    provisioner.dumont-lab.lan:
+      ansible_host: 192.168.77.36
+    dns-server.dumont-lab.lan:
+      ansible_host: 192.168.77.20
+    aap-control.dumont-lab.lan:
+#      ansible_host: 192.168.45.139
+    aap-hub.dumont-lab.lan:
+#      ansible_host: 192.168.45.140
+    aap-host.dumont-lab.lan:
+    provisioner-new.dumont-lab.lan:
+      
+  vars:
+    ipaclient_domain: dumont-lab.lan
+    ipaadmin_principal: admin
+    ipaadmin_password: "{{ ovirt_password }}" 
+    ipaclient_mkhomedir: true
+
 
 kurtvirt_hosts:
   hosts:
@@ -56,7 +91,7 @@ kvm_hosts:
           ansible_host: 192.168.45.190
         kvm-host2.dumont-lab.lan:
           ansible-host: 192.168.45.189
-        test45.dumont-lab.lan:
+        aap-host.dumont-lab.lan:
           ansible_host: 192.168.45.77
     infra_hosts:
       hosts:
@@ -64,7 +99,19 @@ kvm_hosts:
           ansible_host: 192.168.77.21
         storage.dumont-lab.lan:
           ansible_host: 192.168.77.35
+        aap-host.dumont-lab.lan:    
+          ansible_host: 192.168.45.77
+
 rhel7_hosts:
   hosts:
     satellite.dumont-lab.lan:
       ansible_host: 192.168.77.30
+
+label_compliance_policy_standard:
+  hosts: 
+    ocp-host5.dumont-lab.lan:
+      ansible_host: 192.168.45.27
+    ocp-host6.dumont-lab.lan:
+      ansible_host: 192.168.45.28
+
+

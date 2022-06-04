@@ -1,15 +1,15 @@
 - name: get machines to soe
   hosts: all
   become: true
-  remote_user: root 
+#  remote_user: root 
   gather_facts: yes
   vars_files:
     - secrets_folder/ovirt-pass
     - vars/subscription_vars.yml
 
-  collections:
-    - redhat.insights 
-    - ansible.posix
+#  collections:
+#    - redhat.insights 
+#    - ansible.posix
 
   tasks:
 

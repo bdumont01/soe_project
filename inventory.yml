@@ -7,7 +7,7 @@ infra-servers:
     infraserver.dumont-lab.lan:
       ansible_host: 192.168.77.21
     storage.dumont-lab.lan:
-      ansible_host: 192.168.77.35
+      ansible_host: 192.168.77.35  
 ocp_hosts:
   hosts:
     dl360g7-1.dumont-lab.lan:
@@ -76,6 +76,11 @@ ipaclients:
     ipaadmin_principal: admin
     ipaadmin_password: "{{ ovirt_password }}" 
     ipaclient_mkhomedir: true
+
+firewall:
+  hosts:
+    pfsense.dumont-lab.lan:
+      ansible_host: 192.168.77.1
 
 
 kurtvirt_hosts:

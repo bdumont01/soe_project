@@ -25,13 +25,12 @@ kvm_vms:
         dns-server.dumont-lab.lan:
           ansible_host: 192.168.77.20
         provisioner.dumont-lab.lan:
-          ansible_host: 192.168.77.36
         aap-control.dumont-lab.lan:
 #          ansible_host: 192.168.45.139
         aap-hub.dumont-lab.lan:
 #          ansible_host: 192.168.45.140
-        provisioner-new.dumont-lab.lan:
         web-server.dumont-lab.lan:
+        aap-sc.dumont-lab.lan:
     ocp_vms:
       hosts:
         ocp-host1.dumont-lab.lan:
@@ -60,7 +59,6 @@ ipaserver:
 ipaclients:
   hosts:
     provisioner.dumont-lab.lan:
-      ansible_host: 192.168.77.36
     dns-server.dumont-lab.lan:
       ansible_host: 192.168.77.20
     aap-control.dumont-lab.lan:
@@ -68,8 +66,9 @@ ipaclients:
     aap-hub.dumont-lab.lan:
 #      ansible_host: 192.168.45.140
     aap-host.dumont-lab.lan:
-    provisioner-new.dumont-lab.lan:
     web-server.dumont-lab.lan:
+    kvm-host2.dumont-lab.lan:
+    aap-sc.dumont-lab.lan:
 
   vars:
     ipaclient_domain: dumont-lab.lan
@@ -97,7 +96,7 @@ kvm_hosts:
         kvm-host1.dumont-lab.lan:
           ansible_host: 192.168.45.190
         kvm-host2.dumont-lab.lan:
-          ansible-host: 192.168.45.189
+          ansible-host: 192.168.45.143
         aap-host.dumont-lab.lan:
           ansible_host: 192.168.45.77
     infra_hosts:

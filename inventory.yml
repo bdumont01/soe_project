@@ -71,6 +71,7 @@ ipaclients:
     kvm-host2.dumont-lab.lan:
     aap-sc.dumont-lab.lan:
     aap-sso.dumont-lab.lan:
+    kvm-host1.dumont-lab.lan:
 
   vars:
     ipaclient_domain: dumont-lab.lan

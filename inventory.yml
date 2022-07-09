@@ -97,19 +97,13 @@ kvm_hosts:
     optiplex_hosts:
       hosts:
         kvm-host1.dumont-lab.lan:
-          ansible_host: 192.168.45.190
         kvm-host2.dumont-lab.lan:
-          ansible-host: 192.168.45.143
         aap-host.dumont-lab.lan:
-          ansible_host: 192.168.45.77
     infra_hosts:
       hosts:
         infraserver.dumont-lab.lan:
-          ansible_host: 192.168.77.21
         storage.dumont-lab.lan:
-          ansible_host: 192.168.77.35
         aap-host.dumont-lab.lan:    
-          ansible_host: 192.168.45.77
 
 rhel7_hosts:
   hosts:

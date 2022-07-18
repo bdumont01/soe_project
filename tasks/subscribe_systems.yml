@@ -11,6 +11,12 @@
     subscribe_activation_key: "rhel7-ak-vm"
   when: ansible_distribution_major_version == "7"
 
+- name: set activation key rhel 9 virtual
+  set_fact:
+    subscribe_activation_key: "{{ rhel9_ak }}"
+  when:
+    - ansible_distribution_major_version == "9"
+
 
 - name: install cert rpm
   yum:
@@ -32,20 +38,31 @@
   register: redhat_subscription
   ignore_errors: yes
 
-- name: Disable all RHSM repositories
-  community.general.rhsm_repository:
-    name: '*'
-    state: disabled
-  when: redhat_subscription.changed
+#- name: Disable all RHSM repositories
+#  community.general.rhsm_repository:
+#    name: '*'
+#    state: disabled
+#  when: redhat_subscription.changed
 
 
-- name: Enable RHSM repositories
+- name: Enable RHSM rhel 8 repositories
   community.general.rhsm_repository:
     name: rhel-8-for-x86_64*
     state: enabled
   when:                              
     - rhsm_repositories is not defined  
+    - ansible_distribution_major_version == "8"
 #    - ansible_distribution_major_version == "8"
+
+- name: Enable RHSM rhel 9 repositories
+  community.general.rhsm_repository:
+    name: rhel-9-for-x86_64*
+    state: enabled
+  when:                            
+    - rhsm_repositories is not defined
+    - ansible_distribution_major_version == "9"
+
+
 
 - name: add foreman proxy ssh keys
   authorized_key:

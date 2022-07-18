@@ -8,6 +8,8 @@ infra-servers:
       ansible_host: 192.168.77.21
     storage.dumont-lab.lan:
       ansible_host: 192.168.77.35  
+    kvm-host2.dumont-lab.lan:
+    kvm-host1.dumont-lab.lan:
 ocp_hosts:
   hosts:
     dl360g7-1.dumont-lab.lan:
@@ -32,6 +34,7 @@ kvm_vms:
         web-server.dumont-lab.lan:
         aap-sc.dumont-lab.lan:
         aap-sso.dumont-lab.lan:
+        dns-server1.dumont-lab.lan:
     ocp_vms:
       hosts:
         ocp-host1.dumont-lab.lan:
@@ -72,6 +75,7 @@ ipaclients:
     aap-sc.dumont-lab.lan:
     aap-sso.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
+    dns-server1.dumont-lab.lan:
 
   vars:
     ipaclient_domain: dumont-lab.lan

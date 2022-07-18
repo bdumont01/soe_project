@@ -1,6 +1,7 @@
 ---
 rhel8_ak: rhel8-vm-ak
 rhel8_ak_physical: RHEL8-physical-ak
+rhel9_ak: rhel9-ak
 org_name: dumont_home_lab
 rhel8_repositories:
   - rhel-8-for-x86_64-baseos-rpms

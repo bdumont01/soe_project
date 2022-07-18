@@ -10,6 +10,7 @@ infra-servers:
       ansible_host: 192.168.77.35  
     kvm-host2.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
+    aap-host.dumont-lab.lan:
 ocp_hosts:
   hosts:
     dl360g7-1.dumont-lab.lan:
@@ -19,36 +20,22 @@ ocp_hosts:
     dl360g8-3.dumont-lab.lan:
       ansible_host: 192.168.77.25
 kvm_vms:
-  children:
-    infra_vms:
-      hosts:
-        ansible.dumont-lab.lan:
-          ansible_host: 192.168.77.28
-        dns-server.dumont-lab.lan:
-          ansible_host: 192.168.77.20
-        provisioner.dumont-lab.lan:
-        aap-control.dumont-lab.lan:
+  hosts:
+    ansible.dumont-lab.lan:
+      ansible_host: 192.168.77.28
+    dns-server.dumont-lab.lan:
+      ansible_host: 192.168.77.20
+    provisioner.dumont-lab.lan:
+    aap-control.dumont-lab.lan:
 #          ansible_host: 192.168.45.139
-        aap-hub.dumont-lab.lan:
+    aap-hub.dumont-lab.lan:
 #          ansible_host: 192.168.45.140
-        web-server.dumont-lab.lan:
-        aap-sc.dumont-lab.lan:
-        aap-sso.dumont-lab.lan:
-        dns-server1.dumont-lab.lan:
-    ocp_vms:
-      hosts:
-        ocp-host1.dumont-lab.lan:
-          ansible_host: 192.168.45.187
-        ocp-host2.dumont-lab.lan:
-          ansible_host: 192.168.45.24
-        ocp-host3.dumont-lab.lan:
-          ansible_host: 192.168.45.25
-        ocp-host4.dumont-lab.lan:
-          ansible_host: 192.168.45.26
-        ocp-host5.dumont-lab.lan:
-          ansible_host: 192.168.45.27
-        ocp-host6.dumont-lab.lan:
-          ansible_host: 192.168.45.28
+    web-server.dumont-lab.lan:
+    aap-sc.dumont-lab.lan:
+    aap-sso.dumont-lab.lan:
+    dns-server1.dumont-lab.lan:
+    idm-replica-1.dumont-lab.lan:
+    idm-replica-2.dumont-lab.lan:
 
 ipaserver:
   hosts:
@@ -96,18 +83,6 @@ kurtvirt_hosts:
     vm-2022-03-01-01-24-06-1.dumont-lab.lan:
       ansible_host: 192.168.45.87
 
-kvm_hosts:
-  children:
-    optiplex_hosts:
-      hosts:
-        kvm-host1.dumont-lab.lan:
-        kvm-host2.dumont-lab.lan:
-        aap-host.dumont-lab.lan:
-    infra_hosts:
-      hosts:
-        infraserver.dumont-lab.lan:
-        storage.dumont-lab.lan:
-        aap-host.dumont-lab.lan:    
 
 rhel7_hosts:
   hosts:

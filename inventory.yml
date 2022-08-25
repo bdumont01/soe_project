@@ -1,13 +1,14 @@
 ---
+localhost:
+  ansible_connection: local
 infra-servers:
   hosts: 
     workstation.dumont-lab.lan:
-      ansible_host: 192.168.77.27
 #      ansible_connection: local
     infraserver.dumont-lab.lan:
-      ansible_host: 192.168.77.21
+#      ansible_host: 192.168.77.21
     storage.dumont-lab.lan:
-      ansible_host: 192.168.77.35  
+#      ansible_host: 192.168.77.35  
     kvm-host2.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
     aap-host.dumont-lab.lan:
@@ -39,8 +40,8 @@ kvm_vms:
 
 ipaserver:
   hosts:
-    infraserver.dumont-lab.lan:
-      ansible_host: 192.168.77.21
+    idm-replica-1..dumont-lab.lan:
+#      ansible_host: 192.168.77.21
       ipaserver_domain: dumont-lab.lan
       ipaserver_realm: DUMONT-LAB.LAN
       ipaserver_setup_dns: no
@@ -63,12 +64,24 @@ ipaclients:
     aap-sso.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
     dns-server1.dumont-lab.lan:
+    idm-replica-1.dumont-lab.lan:
+    idm-replica-2.dumont-lab.lan:
+    infraserver.dumont-lab.lan:
 
   vars:
     ipaclient_domain: dumont-lab.lan
     ipaadmin_principal: admin
     ipaadmin_password: "{{ ovirt_password }}" 
     ipaclient_mkhomedir: true
+    ipaclient_force_join: yes
+
+ipareplicas:
+  hosts:
+    idm-replica-1.dumont-lab.lan:
+    idm-replica-2.dumont-lab.lan:
+
+  vars:
+    ipaadmin_password: "{{ ovirt_password }}"
 
 firewall:
   hosts:

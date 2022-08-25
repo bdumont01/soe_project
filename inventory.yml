@@ -23,14 +23,10 @@ ocp_hosts:
 kvm_vms:
   hosts:
     ansible.dumont-lab.lan:
-      ansible_host: 192.168.77.28
     dns-server.dumont-lab.lan:
-      ansible_host: 192.168.77.20
     provisioner.dumont-lab.lan:
     aap-control.dumont-lab.lan:
-#          ansible_host: 192.168.45.139
     aap-hub.dumont-lab.lan:
-#          ansible_host: 192.168.45.140
     web-server.dumont-lab.lan:
     aap-sc.dumont-lab.lan:
     aap-sso.dumont-lab.lan:

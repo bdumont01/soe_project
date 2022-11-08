@@ -24,7 +24,7 @@
     - include_role: 
         name: redhat.insights.insights_client
 
-#    - include_tasks: tasks/install_compliance.yml
+    - include_tasks: tasks/install_compliance.yml
 
 #    - include_tasks: tasks/create_users_groups.yml
 

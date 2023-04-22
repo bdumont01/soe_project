@@ -6,12 +6,11 @@ infra-servers:
     workstation.dumont-lab.lan:
 #      ansible_connection: local
     infraserver.dumont-lab.lan:
-#      ansible_host: 192.168.77.21
     storage.dumont-lab.lan:
-#      ansible_host: 192.168.77.35  
     kvm-host2.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
     aap-host.dumont-lab.lan:
+    kvm-host3.dumont-lab.lan:
 ocp_hosts:
   hosts:
     dl360g7-1.dumont-lab.lan:
@@ -27,16 +26,21 @@ kvm_vms:
     provisioner.dumont-lab.lan:
     aap-control.dumont-lab.lan:
     aap-hub.dumont-lab.lan:
-    web-server.dumont-lab.lan:
+#    web-server.dumont-lab.lan:
     aap-sc.dumont-lab.lan:
     aap-sso.dumont-lab.lan:
-    dns-server1.dumont-lab.lan:
+#    dns-server1.dumont-lab.lan:
     idm-replica-1.dumont-lab.lan:
     idm-replica-2.dumont-lab.lan:
+    sno-host1.dumont-lab.lan:
+    virtual-machines-new-network-order-1.dumont-lab.lan:
+    virtual-machines-new-network-order-2-1.dumont-lab.lan:
+    controller-postgres.dumont-lab.lan:
+    ocp-host.dumont-lab.lan:
 
 ipaserver:
   hosts:
-    idm-replica-1..dumont-lab.lan:
+    idm-replica-2.dumont-lab.lan:
 #      ansible_host: 192.168.77.21
       ipaserver_domain: dumont-lab.lan
       ipaserver_realm: DUMONT-LAB.LAN
@@ -48,21 +52,25 @@ ipaclients:
   hosts:
     provisioner.dumont-lab.lan:
     dns-server.dumont-lab.lan:
-      ansible_host: 192.168.77.20
     aap-control.dumont-lab.lan:
-#      ansible_host: 192.168.45.139
     aap-hub.dumont-lab.lan:
-#      ansible_host: 192.168.45.140
     aap-host.dumont-lab.lan:
     web-server.dumont-lab.lan:
     kvm-host2.dumont-lab.lan:
     aap-sc.dumont-lab.lan:
     aap-sso.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
-    dns-server1.dumont-lab.lan:
     idm-replica-1.dumont-lab.lan:
     idm-replica-2.dumont-lab.lan:
     infraserver.dumont-lab.lan:
+    ansible.dumont-lab.lan:
+    workstation.dumont-lab.lan:
+    storage.dumont-lab.lan:
+    satellite.dumont-lab.lan:
+    controller-postgres.dumont-lab.lan:
+    bd-laptop.dumont-lab.lan:
+    kvm-host3.dumont-lab.lan:
+
 
   vars:
     ipaclient_domain: dumont-lab.lan
@@ -102,5 +110,9 @@ label_compliance_policy_standard:
   hosts: 
     aap-sso.dumont-lab.lan:
     aap-sc.dumont-lab.lan:
-
+# added for testing smart mgmt workshop
+control_nodes:
+  hosts:
+    ec2-3-145-34-63.us-east-2.compute.amazonaws.com:
+      ansible_host: 3.145.34.63
 

@@ -1,4 +1,4 @@
-- name: get machines to soe
+- name: Get machines to soe
   hosts: all
   become: true
 #  remote_user: root 
@@ -11,20 +11,19 @@
 #    - redhat.insights 
 #    - ansible.posix
 
-  tasks:
+  tasks: 
+    - name: Subscribe systems to satellite
+      include_tasks: tasks/subscribe_systems.yml
 
-#    - name: gather facts and ignore failuers for vm's that are off (unreachable)
- #     setup:
-#      ignore_errors: yes
-      
-    - include_tasks: tasks/subscribe_systems.yml
+    - name: Install standard packages
+      include_tasks: tasks/soe_rhel_vm_packages.yml
 
-    - include_tasks: tasks/soe_rhel_vm_packages.yml
-
-    - include_role: 
+    - name: Register to insights
+      include_role: 
         name: redhat.insights.insights_client
 
-    - include_tasks: tasks/install_compliance.yml
+    - name: Install openscap packages
+      include_tasks: tasks/install_compliance.yml
 
 #    - include_tasks: tasks/create_users_groups.yml
 

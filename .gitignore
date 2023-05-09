@@ -1,3 +1,4 @@
 # ignore vault-pass file
 vault-pass
 ansible-navigator.log
+artifacts/*

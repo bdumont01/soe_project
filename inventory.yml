@@ -3,10 +3,7 @@ localhost:
   ansible_connection: local
 infra-servers:
   hosts: 
-    workstation.dumont-lab.lan:
-#      ansible_connection: local
-    infraserver.dumont-lab.lan:
-    storage.dumont-lab.lan:
+    utility.dumont-lab.lan:
     kvm-host2.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
     aap-host.dumont-lab.lan:
@@ -27,16 +24,14 @@ kvm_vms:
     aap-control.dumont-lab.lan:
     aap-hub.dumont-lab.lan:
 #    web-server.dumont-lab.lan:
-    aap-sc.dumont-lab.lan:
-    aap-sso.dumont-lab.lan:
+#    aap-sc.dumont-lab.lan:
+#    aap-sso.dumont-lab.lan:
 #    dns-server1.dumont-lab.lan:
     idm-replica-1.dumont-lab.lan:
     idm-replica-2.dumont-lab.lan:
-    sno-host1.dumont-lab.lan:
-    virtual-machines-new-network-order-1.dumont-lab.lan:
-    virtual-machines-new-network-order-2-1.dumont-lab.lan:
-    controller-postgres.dumont-lab.lan:
-    ocp-host.dumont-lab.lan:
+    sno-vm.dumont-lab.lan:
+    satellite.dumont-lab.lan:
+
 
 ipaserver:
   hosts:
@@ -65,9 +60,7 @@ ipaclients:
     infraserver.dumont-lab.lan:
     ansible.dumont-lab.lan:
     workstation.dumont-lab.lan:
-    storage.dumont-lab.lan:
     satellite.dumont-lab.lan:
-    controller-postgres.dumont-lab.lan:
     bd-laptop.dumont-lab.lan:
     kvm-host3.dumont-lab.lan:
 
@@ -87,32 +80,8 @@ ipareplicas:
   vars:
     ipaadmin_password: "{{ ovirt_password }}"
 
-firewall:
-  hosts:
-    pfsense.dumont-lab.lan:
-      ansible_host: 192.168.77.1
-
-
-kurtvirt_hosts:
-  hosts:
-    vm-2022-03-01-20-23-04-1.dumont-lab.lan:
-      ansible_host: 192.168.45.89
-    vm-2022-03-01-01-24-06-1.dumont-lab.lan:
-      ansible_host: 192.168.45.87
-
-
-rhel7_hosts:
-  hosts:
-    satellite.dumont-lab.lan:
-      ansible_host: 192.168.77.30
-
 label_compliance_policy_standard:
   hosts: 
     aap-sso.dumont-lab.lan:
     aap-sc.dumont-lab.lan:
-# added for testing smart mgmt workshop
-control_nodes:
-  hosts:
-    ec2-3-145-34-63.us-east-2.compute.amazonaws.com:
-      ansible_host: 3.145.34.63
-
+    

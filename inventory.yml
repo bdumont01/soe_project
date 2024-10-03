@@ -3,19 +3,13 @@ localhost:
   ansible_connection: local
 infra-servers:
   hosts: 
-    utility.dumont-lab.lan:
     kvm-host2.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
     aap-host.dumont-lab.lan:
     kvm-host3.dumont-lab.lan:
 ocp_hosts:
   hosts:
-    dl360g7-1.dumont-lab.lan:
-      ansible_host: 192.168.77.23
-    dl360g7-2.dumont-lab.lan:
-      ansible_host: 192.168.77.24
-    dl360g8-3.dumont-lab.lan:
-      ansible_host: 192.168.77.25
+    dell-ocp.dumont-lab.lan:
 kvm_vms:
   hosts:
     ansible.dumont-lab.lan:
@@ -23,10 +17,6 @@ kvm_vms:
     provisioner.dumont-lab.lan:
     aap-control.dumont-lab.lan:
     aap-hub.dumont-lab.lan:
-#    web-server.dumont-lab.lan:
-#    aap-sc.dumont-lab.lan:
-#    aap-sso.dumont-lab.lan:
-#    dns-server1.dumont-lab.lan:
     idm-replica-1.dumont-lab.lan:
     idm-replica-2.dumont-lab.lan:
     sno-vm.dumont-lab.lan:
@@ -50,16 +40,11 @@ ipaclients:
     aap-control.dumont-lab.lan:
     aap-hub.dumont-lab.lan:
     aap-host.dumont-lab.lan:
-    web-server.dumont-lab.lan:
     kvm-host2.dumont-lab.lan:
-    aap-sc.dumont-lab.lan:
-    aap-sso.dumont-lab.lan:
     kvm-host1.dumont-lab.lan:
     idm-replica-1.dumont-lab.lan:
     idm-replica-2.dumont-lab.lan:
-    infraserver.dumont-lab.lan:
     ansible.dumont-lab.lan:
-    workstation.dumont-lab.lan:
     satellite.dumont-lab.lan:
     bd-laptop.dumont-lab.lan:
     kvm-host3.dumont-lab.lan:

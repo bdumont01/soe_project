@@ -13,7 +13,7 @@
 
   tasks: 
     - name: Subscribe systems to satellite
-      include_tasks: tasks/subscribe_systems.yml
+      include_tasks: tasks/subscribe_systems_rhsm.yml
 
     - name: Install standard packages
       include_tasks: tasks/soe_rhel_vm_packages.yml

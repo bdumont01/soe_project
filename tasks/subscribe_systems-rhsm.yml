@@ -1,0 +1,5 @@
+- name: Register system to RHSM using my account
+  community.general.redhat_subscription:
+    state: present
+    username: "{{ rhsm_username }}"
+    password: "{{ ovirt_password }}"
